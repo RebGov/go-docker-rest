@@ -11,7 +11,10 @@ import (
 
 var log = logrus.New()
 
-func goWithDocker(c echo.Context) error {
+func goWithDocker(c echo.Context) (err error) {
+	if err != nil {
+		fmt.Println(err)
+	}
 	return c.JSON(http.StatusOK, "Becci Go with Docker Container using Echo")
 }
 
